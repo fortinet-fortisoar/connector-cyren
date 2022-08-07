@@ -1,0 +1,99 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "72ab3d88-695b-448e-ace6-88a530b7d7ae",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Cyren - 1.0.0",
+      "description": "Cyren is leading a revolution in internet security by utilizing extensive cloud intelligence to provide the fastest protection available. This connector sends the URL Submitted by the End User to Cyren for web threats like phishing and malware.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "cyren"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "c6fea03c-1bca-42f8-9611-75abd417652e",
+          "collection": "/api/3/workflow_collections/72ab3d88-695b-448e-ace6-88a530b7d7ae",
+          "triggerLimit": null,
+          "description": "Provide the categories assigned to a single URL.",
+          "name": "Get URL Lookup",
+          "tag": "#Cyren",
+          "recordTags": [
+            "cyren"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/86f4ad06-ea2f-46bc-9873-f88c7b988fef",
+          "steps": [
+            {
+              "uuid": "86f4ad06-ea2f-46bc-9873-f88c7b988fef",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "325ef459-116e-4363-b60a-e79787ae6bae",
+                "title": "Cyren: Get URL Lookup",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "e5086282-5c1c-47fc-abe1-043bd9581fb7",
+              "@type": "WorkflowStep",
+              "name": "Get URL Lookup",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Cyren",
+                "config": "''",
+                "params": {
+                  "value": ""
+                },
+                "version": "1.0.0",
+                "connector": "cyren",
+                "operation": "get_url_lookup",
+                "operationTitle": "Get URL Lookup",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "8258224a-6b71-48d6-b4a4-fe70400487ec",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get URL Lookup",
+              "sourceStep": "/api/3/workflow_steps/86f4ad06-ea2f-46bc-9873-f88c7b988fef",
+              "targetStep": "/api/3/workflow_steps/e5086282-5c1c-47fc-abe1-043bd9581fb7"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
