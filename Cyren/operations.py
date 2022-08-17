@@ -34,7 +34,7 @@ class Cyren(object):
             data = json.dumps(data)
             logger.debug('After converting into a JSON object: {0}'.format(data))
         try:
-            logger.info(
+            logger.debug(
                 'Making a request with {0} method, {1} data and {2} as headers.'.format(method, data, self.headers))
             response = requests.request(method, url, data=data, headers=self.headers)
             if response.status_code in [200]:
@@ -97,6 +97,7 @@ def _check_health(config):
         if server_config['status'] == 'Failure':
             logger.exception('Authentication Error, Check URL and API Token.')
             raise ConnectorError('Authentication Error, Check URL and API Token.')
+        return True
     except Exception as Err:
         logger.exception('Health check failed with: {0}'.format(Err))
         raise ConnectorError('Health check failed with: {0}'.format(Err))

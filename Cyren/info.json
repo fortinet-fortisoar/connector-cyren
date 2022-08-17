@@ -32,8 +32,7 @@
                 "tooltip": "Provide a JSON Web Token (JWT), used for user authentication.",
                 "required": true,
                 "visible": true,
-                "editable": true,
-                "placeholder": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJleHAiOjE2NjI1MDg3OTksImF1ZCI6InVybGZfYXBpX2V2XWwiLCJzdWIiOiJYV1QxWE5XMFgwV0RMMDBPMloyQyIsImp0aSI6IjUyNjZkMDc4LTE2MWMtMTFlZC1hZDBmLTU2NmYxZTAwMDFjMiIsImlzcyI6ImNsbSJ9.EGlPmlKHrcCcHcxvzy9FfPQ2J5m1kZnIpiRYEsP3cuoEnCGRFglubHfVlg7X3e7VLeDKi6KrRpyeHYUThGXaeBE-Vj06s2wAZMLMqV9mfGq0e-cLkR3ecaUbjeo4w14W5yYAEWjkRulIU-aqNrbWpb__uhxIo0yd1YNaPIb3eRbznAIs0Wgi5jfcxpuEE8hGgYBHo4XkfBVCIOhdUqaqSZDjI39zgf3YypTRfaB1T8eMkSx02XPHD-Ebv5avro6TiMezPmOiAYwD4laxtVW-3a5LRrQgqfJdlrpejr31863O4OYYOfecM0wEEIcN1cjkA02Yiq-jluiBpNZaIgkQaw"
+                "editable": true
             },
             {
                 "title": "Select Bundle Type",
