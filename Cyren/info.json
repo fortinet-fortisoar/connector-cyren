@@ -1,0 +1,99 @@
+{
+    "name": "cyren",
+    "version": "1.0.0",
+    "label": "Cyren",
+    "description": "Cyren is leading a revolution in internet security by utilizing extensive cloud intelligence to provide the fastest protection available. This connector sends the URL Submitted by the End User to Cyren for web threats like phishing and malware.",
+    "publisher": "spryIQ.co",
+    "icon_small_name": "cyren32x32.png",
+    "icon_large_name": "cyren80x80.png",
+    "category": "Threat Intelligence",
+    "help_online": "https://github.com/bidisha-spryiq/connector-cyren/blob/develop/docs/CyrenConnectorDoc.md",
+    "cs_compatible": true,
+    "cs_approved": false,
+    "configuration": {
+        "fields": [
+            {
+                "title": "Server URL",
+                "type": "text",
+                "name": "server",
+                "description": "URL of the Cyren connector to access the connector website.",
+                "tooltip": "URL of the Cyren connector to access the connector website.",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "api-url.cyren.com",
+                "placeholder": "api-url.cyren.com or https://api-url.cyren.com"
+            },
+            {
+                "title": "JWToken",
+                "type": "password",
+                "name": "token",
+                "description": "Provide a JSON Web Token (JWT), used for user authentication.",
+                "tooltip": "Provide a JSON Web Token (JWT), used for user authentication.",
+                "required": true,
+                "visible": true,
+                "editable": true
+            },
+            {
+                "title": "Select Bundle Type",
+                "type": "select",
+                "name": "select_bundle_type",
+                "description": "Select the bundle type to proceed with the api execution.",
+                "tooltip": "Select the bundle type to proceed with the api execution.",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "options": [
+                    "Free",
+                    "Security",
+                    "Complete"
+                ]
+            }
+        ]
+    },
+    "operations": [
+        {
+            "operation": "get_url_lookup",
+            "title": "Get URL Lookup",
+            "description": "Provide the categories assigned to a single URL.",
+            "category": "investigation",
+            "annotation": "get_url_lookup",
+            "output_schema": {
+                "urls": [
+                    {
+                        "url": "",
+                        "categoryNames": []
+                    }
+                ]
+            },
+            "parameters": [
+                {
+                    "title": "Input Type",
+                    "type": "select",
+                    "name": "input_type",
+                    "description": "Select the url type that is how you want to provide the url or urls.",
+                    "tooltip": "Select the url type that is how you want to provide the url or urls.",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "options": [
+                        "Single URL",
+                        "Batch of URLs"
+                    ]
+                },
+                {
+                    "name": "value",
+                    "title": "Lookup URL",
+                    "type": "text",
+                    "editable": true,
+                    "visible": true,
+                    "required": true,
+                    "value": "",
+                    "placeholder": "cyren.com or ['cyren.com', 'test.com']",
+                    "description": "URL for which you want to fetch the categories assigned for."
+                }
+            ],
+            "enabled": true
+        }
+    ]
+}
