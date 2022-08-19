@@ -7,7 +7,7 @@
     "icon_small_name": "cyren32x32.png",
     "icon_large_name": "cyren80x80.png",
     "category": "Threat Intelligence",
-    "help_online": "https://github.com/bidisha-spryiq/connector-cyren/blob/develop/docs/CyrenConnectorDoc.md",
+    "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/cyren/376/cyren-v1-0-0",
     "cs_compatible": true,
     "cs_approved": false,
     "configuration": {
